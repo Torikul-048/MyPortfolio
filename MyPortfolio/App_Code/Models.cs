@@ -7,5 +7,6 @@ namespace MyPortfolio.App_Code
 {
     public class Models
     {
+        
     }
 }

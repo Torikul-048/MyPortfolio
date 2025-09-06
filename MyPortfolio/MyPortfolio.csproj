@@ -99,22 +99,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\dashboard.aspx" />
     <Content Include="Admin\login.aspx" />
-    <Content Include="Admin\manage.aspx" />
+    <Content Include="Assets\css\admin.css" />
+    <Content Include="Assets\css\styles.css" />
+    <Content Include="Assets\images\Torikul_Islam.jpg" />
+    <Content Include="Assets\js\admin.js" />
+    <Content Include="Assets\js\main.js" />
     <Content Include="contact.aspx" />
-    <Content Include="CSS\admin.css" />
-    <Content Include="CSS\main.css" />
     <Content Include="home.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Images\Torikul_Islam.jpg" />
-    <Content Include="JS\admin.js" />
-    <Content Include="JS\main.js" />
     <Content Include="showcase.aspx" />
     <Content Include="Site.Master" />
+    <Content Include="testCRUD.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -122,14 +130,14 @@
     <Compile Include="Admin\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\manage.aspx.cs">
-      <DependentUpon>manage.aspx</DependentUpon>
+    <Compile Include="testCRUD.aspx.cs">
+      <DependentUpon>testCRUD.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\manage.aspx.designer.cs">
-      <DependentUpon>manage.aspx</DependentUpon>
+    <Compile Include="testCRUD.aspx.designer.cs">
+      <DependentUpon>testCRUD.aspx</DependentUpon>
     </Compile>
-    <Content Include="App_Code\Database.cs" />
+    <Content Include="App_Code\DataHelper.cs" />
     <Content Include="App_Code\Models.cs" />
     <Compile Include="contact.aspx.cs">
       <DependentUpon>contact.aspx</DependentUpon>
@@ -164,10 +172,7 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Images\projects\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
