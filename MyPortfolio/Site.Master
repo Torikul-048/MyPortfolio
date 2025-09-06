@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MyPortfolio.SiteMaster" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My Portfolio</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <%-- Add your custom CSS --%>
+    <link href="~/Assets/CSS/main.css" rel="stylesheet" />
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--Keep only essential WebForms scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <%--Add your custom JavaScript--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <%-- Custom Navigation (No Bootstrap Classes) --%>
+        <header>
+            <nav class="main-nav">
+                <div class="nav-container">
+                    <a class="logo" runat="server" href="~/">My Portfolio</a>
+                    <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/Portfolio">Portfolio</a></li>
+                        <li><a runat="server" href="~/Skills">Skills</a></li>
+                        <li><a runat="server" href="~/Achievements">Achievements</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <%-- Main Content Area --%>
+        <main>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+
+        <%-- Custom Footer --%>
+        <footer class="site-footer">
+            <div class="footer-container">
+                <p>&copy; <%: DateTime.Now.Year %> - My Portfolio. All rights reserved.</p>
+                <%-- Social Links will go here --%>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook" target="_blank">Facebook</a>
+                    <a href="#" class="social-link github" target="_blank">GitHub</a>
+                    <a href="#" class="social-link linkedin" target="_blank">LinkedIn</a>
+                    <a href="mailto:your.email@example.com" class="social-link email">Email</a>
+                </div>
+            </div>
+        </footer>
+
+        <%-- Add your custom JavaScript --%>
+        <script src="~/Assets/JS/main.js"></script>
+    </form>
+</body>
+</html>
