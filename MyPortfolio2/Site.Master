@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MyPortfolio2.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My Portfolio</title>
+
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Portfolio Styles -->
+    <link href="~/Styles/portfolio.css" rel="stylesheet" type="text/css" />
+    
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form runat="server">
+        
+
+        <!-- Fixed Navigation Header -->
+        <nav class="navbar fixed-top">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="#home">Torikul Islam</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <!-- Social Icons -->
+                <h2>Get In Touch</h2>
+<div class="social-links">
+    <a href="https://www.facebook.com/torikul.islam.354418" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://github.com/Torikul-048" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="torikulislam732978@gmail.com"><i class="fas fa-envelope"></i></a>
+</div>
+
+<style>
+.social-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+}
+
+/* Optional: Platform-specific colors */
+.social-links a:nth-child(1):hover { color: #1877F2; } /* Facebook */
+.social-links a:nth-child(2):hover { color: #0077B5; } /* LinkedIn */
+.social-links a:nth-child(3):hover { color: #000; }    /* GitHub */
+.social-links a:nth-child(4):hover { color: #D44638; } /* Email */
+</style>
+       
+                <p>&copy; <%: DateTime.Now.Year %> - Torikul Islam. All rights reserved.</p>
+         
+            </div>
+        </footer>
+    </form>
+
+    <!-- Portfolio JavaScript -->
+    <script src="~/Scripts/portfolio.js"></script>
+</body>
+</html>
